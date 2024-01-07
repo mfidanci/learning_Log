@@ -1,0 +1,22 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block page_header %}
+    <h2>{{ topic }}</h2>
+{% endblock page_header %}
+
+
+{% block content %}
+
+    <h3>Entries:</h3>
+
+    <p>
+
+        {% for entry in entries %}
+            {{ entry.text | linebreaks }}
+        {% empty %}
+            There is no entry for this topic yet.
+
+        {% endfor %}
+    </p>
+
+{% endblock content %}
